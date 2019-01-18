@@ -9,7 +9,7 @@ namespace LoanRepaymentUtilityTest
         [SetUp]
         public void Setup()
         {
-            testLoan.Principle = 1000;
+            testLoan.Principal = 1000;
             testLoan.InterestQuantity = 50;
         }
 
@@ -20,7 +20,7 @@ namespace LoanRepaymentUtilityTest
             testLoan.Payment = testInput;
 
             testLoan.ApplyPayment();
-            decimal actual = testLoan.Principle;
+            decimal actual = testLoan.Principal;
             decimal expected = 950;
 
             Assert.AreEqual(expected, actual);
@@ -46,7 +46,7 @@ namespace LoanRepaymentUtilityTest
             testLoan.Payment = testInput;
 
             testLoan.ApplyPayment();
-            decimal actual = testLoan.Principle;
+            decimal actual = testLoan.Principal;
             decimal expected = 1000;
 
             Assert.AreEqual(expected, actual);
@@ -72,7 +72,7 @@ namespace LoanRepaymentUtilityTest
             testLoan.Payment = testInput;
 
             testLoan.ApplyPayment();
-            decimal actual = testLoan.Principle;
+            decimal actual = testLoan.Principal;
             decimal expected = 1000;
 
             Assert.AreEqual(expected, actual);
@@ -94,7 +94,7 @@ namespace LoanRepaymentUtilityTest
         [Test]
         public void ApplyPaymentTest_PaymentIsEqualToBalance_InterestIsZero()
         {
-            decimal testInput = testLoan.Principle + testLoan.InterestQuantity;
+            decimal testInput = testLoan.Principal + testLoan.InterestQuantity;
             testLoan.Payment = testInput;
 
             testLoan.ApplyPayment();
@@ -107,11 +107,11 @@ namespace LoanRepaymentUtilityTest
         [Test]
         public void ApplyPaymentTest_PaymentIsEqualToBalance_PrincipleIsZero()
         {
-            decimal testInput = testLoan.Principle + testLoan.InterestQuantity;
+            decimal testInput = testLoan.Principal + testLoan.InterestQuantity;
             testLoan.Payment = testInput;
 
             testLoan.ApplyPayment();
-            decimal actual = testLoan.Principle;
+            decimal actual = testLoan.Principal;
             decimal expected = 0;
 
             Assert.AreEqual(expected, actual);
@@ -120,7 +120,7 @@ namespace LoanRepaymentUtilityTest
         [Test]
         public void ApplyPaymentTest_PaymentIsGreaterThanBalance_BalanceIsNegative()
         {
-            decimal testInput = testLoan.Principle + testLoan.InterestQuantity + 1;
+            decimal testInput = testLoan.Principal + testLoan.InterestQuantity + 1;
             testLoan.Payment = testInput;
 
             testLoan.ApplyPayment();

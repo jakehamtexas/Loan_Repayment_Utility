@@ -6,14 +6,14 @@ namespace LoanRepaymentUtility
     class Program
     {
         private static readonly string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-        private static readonly string preservedDataFilePath = baseDirectory + "preserve.txt";
+        private static readonly string persistedDataFilePath = baseDirectory + "preserve.txt";
 
         static void Main(string[] args)
         {
-            Loan loan = new Loan(preservedDataFilePath);
-            if (File.Exists(preservedDataFilePath))
+            Loan loan = new Loan(persistedDataFilePath);
+            if (File.Exists(persistedDataFilePath))
             {
-                InitializeLoanMembersFromPreservedData(loan);
+                InitializeLoanMembersFromPersistedData(loan);
             }
 
             while (true)
@@ -22,7 +22,7 @@ namespace LoanRepaymentUtility
             }
         }
 
-        private static void InitializeLoanMembersFromPreservedData(Loan loan)
+        private static void InitializeLoanMembersFromPersistedData(Loan loan)
         {
             loan.LoadData();
             loan.ShowCurrentBalance();
@@ -62,7 +62,7 @@ namespace LoanRepaymentUtility
             loan.ShowCurrentBalance();
             loan.UpdateLastCalculatedDate();
             loan.Log(baseDirectory);
-            loan.PreserveData();
+            loan.PersistData();
         }
 
         private static void DisplayConfigurPrompt(Loan loan)
