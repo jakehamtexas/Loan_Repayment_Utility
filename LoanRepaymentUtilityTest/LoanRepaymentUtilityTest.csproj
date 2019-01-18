@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
@@ -16,4 +17,24 @@
     <ProjectReference Include="..\LoanRepaymentUtility\LoanRepaymentUtility.csproj" />
   </ItemGroup>
 
+=======
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nunit" Version="3.10.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.10.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LoanRepaymentUtility\LoanRepaymentUtility.csproj" />
+  </ItemGroup>
+
+>>>>>>> 21fff0f6295d471cb83564aaaac281a02e9dc797
 </Project>
